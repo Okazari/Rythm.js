@@ -11,6 +11,7 @@
   </head>
   <body>
     <section class="page-header">
+      <audio id="audio" src="DJSona.mp3"></audio>
       <h1 class="project-name">Rythm.js</h1>
       <h2 class="project-tagline">Make your page dancing.</h2>
       <a href="https://github.com/Okazari/Rythm.js" class="btn">View on GitHub</a>
@@ -52,6 +53,15 @@
 
     </section>
 
-  
+    <script src='rythm.js'></script>
+    <script type="text/javascript">
+      window.onload = function(){
+        console.log('coucou');
+        var rythm = new Rythm();
+        var audio = document.getElementById('audio');
+        rythm.setMusic(audio);
+        rythm.start();
+      }
+    </script>
   </body>
 </html>
