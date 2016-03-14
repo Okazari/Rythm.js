@@ -12,11 +12,14 @@
   <body>
     <section class="page-header">
       <audio id="audio" src="DJSona.mp3"></audio>
-      <h1 class="project-name">Rythm.js</h1>
+      <h1 class="project-name">
+        <span class="rythm-medium" style="display:inline-block">Rythm</span>
+        <span class="rythm-high" style="display:inline-block">.js</span>
+      </h1>
       <h2 class="project-tagline">Make your page dancing.</h2>
-      <a href="https://github.com/Okazari/Rythm.js" class="btn">View on GitHub</a>
-      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="https://github.com/Okazari/Rythm.js" class="btn rythm-bass">View on GitHub</a>
+      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn rythm-bass">Download .zip</a>
+      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn rythm-high">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
@@ -58,6 +61,9 @@
       window.onload = function(){
         console.log('coucou');
         var rythm = new Rythm();
+        rythm.pulseRatio = 0.15;
+        rythm.startingScale = 0.90;
+        rythm.maxValueHistory = 50;
         var audio = document.getElementById('audio');
         rythm.setMusic(audio);
         rythm.start();

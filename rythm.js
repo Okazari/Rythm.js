@@ -81,7 +81,7 @@ function Rythm(){
   function pulse(name, value){
     var elements = document.getElementsByClassName(name);
     for(var i = 0; i < elements.length; i++){
-      elements[i].style="transform:scale("+value+")"
+      elements[i].style.transform = 'scale('+value+')'
     }
   }
 
