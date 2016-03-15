@@ -11,13 +11,13 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name rythm-medium">Rythm.js</h1>
+      <h1 class="project-name">Rythm.js</h1>
       <h2 class="project-tagline">Make your page dancing.</h2>
-      <a href="https://github.com/Okazari/Rythm.js" class="btn rythm-bass">View on GitHub</a>
-      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn rythm-medium">Download .zip</a>
-      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn rythm-high">Download .tar.gz</a>
+      <a href="https://github.com/Okazari/Rythm.js" class="btn">View on GitHub</a>
+      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn">Download .tar.gz</a>
     </section>
-    <audio src="DJSona.mp3" id="audio"></audio>
+
     <section class="main-content">
       <h1>
 <a id="rythmjs" class="anchor" href="#rythmjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rythm.js</h1>
@@ -114,17 +114,4 @@ rythm-high
 
   
   </body>
-  <script src="rythm.js"></script>
-  <script type="text/javascript">
-    window.onload = function(){
-      var rythm = new Rythm();
-      rythm.startingScale  = 0.90;
-      rythm.pulseRatio  = 0.20;
-      rythm.maxValueHistory = 50;
-      rythm.setGain(0.1);
-      var audio = document.getElementById('audio');
-      rythm.setMusic(audio);
-      rythm.start();
-    }
-  </script>
 </html>
