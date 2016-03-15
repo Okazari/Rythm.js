@@ -11,32 +11,30 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name rythm-high">Rythm.js</h1>
-      <h2 class="project-tagline">Make your page dancing.</h2>
-      <a href="https://github.com/Okazari/Rythm.js" class="btn rythm-bass">View on GitHub</a>
-      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn rythm-high">Download .zip</a>
-      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn rythm-medium">Download .tar.gz</a>
+      <h1 class="project-name">Rythm.js</h1>
+      <h2 class="project-tagline">Let your page dance.</h2>
+      <a href="https://github.com/Okazari/Rythm.js" class="btn">View on GitHub</a>
+      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn">Download .tar.gz</a>
     </section>
-    <audio id="audio" src="DJSona.mp3"></audio>
+
     <section class="main-content">
       <h1>
 <a id="rythmjs" class="anchor" href="#rythmjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rythm.js</h1>
 
-<p>Link to the documentation : <a href="http://okazari.github.io/Rythm.js/">http://okazari.github.io/Rythm.js/</a></p>
-
-<p>A javascript library that makes your page dancing.</p>
+<p>A javascript library that lets your page dance.</p>
 
 <p>Actually in developpement</p>
 
 <h1>
 <a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started</h1>
 
-<p>Install with npm (Soon)</p>
+<p>Install with npm</p>
 
 <pre><code>npm install rythm.js
 </code></pre>
 
-<p>Import rythm in to your page</p>
+<p>Import rythm into your page</p>
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>../rythm.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
@@ -48,7 +46,7 @@
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>rythm-bass<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<p>Create a Rythm object and give it the audio element then use the start function</p>
+<p>Create a Rythm object and give it the audio element then use the start function.</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> rythm <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Rythm</span>();
 <span class="pl-k">var</span> audio <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>audio<span class="pl-pds">'</span></span>);
@@ -65,19 +63,35 @@
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> rythm <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Rythm</span>();
 
-<span class="pl-c">//Default 1</span>
+<span class="pl-c">/* The starting scale is the minimum scale your elements will take </span>
+<span class="pl-c"> * Scale ratio is startingScale + (pulseRatio * currentPulse);</span>
+<span class="pl-c"> * Value in percentage between 0-1</span>
+<span class="pl-c"> * Default 1</span>
+<span class="pl-c"> */</span>
 <span class="pl-smi">rythm</span>.<span class="pl-smi">startingScale</span> <span class="pl-k">=</span> value;
 
-<span class="pl-c">//Default 100</span>
-<span class="pl-smi">rythm</span>.<span class="pl-smi">maxValueHistory</span> <span class="pl-k">=</span> value;
-
-<span class="pl-c">//Default 0.75</span>
+<span class="pl-c">/* The pulse ratio is be the maximum additionnal scale your element will take </span>
+<span class="pl-c"> * Scale ratio is startingScale + (pulseRatio * currentPulse)</span>
+<span class="pl-c"> * Value in percentage between 0-1</span>
+<span class="pl-c"> * Default 0.75</span>
+<span class="pl-c"> */</span>
 <span class="pl-smi">rythm</span>.<span class="pl-smi">pulseRatio</span> <span class="pl-k">=</span> value;
 
-<span class="pl-c">//Set the music the page will dance to.</span>
+<span class="pl-c">/* The max value history represent the number of passed value </span>
+<span class="pl-c"> * that will be stored to evaluate the current pulse.</span>
+<span class="pl-c"> * Int value, minimum 1</span>
+<span class="pl-c"> * Default 100</span>
+<span class="pl-c"> */</span>
+<span class="pl-smi">rythm</span>.<span class="pl-smi">maxValueHistory</span> <span class="pl-k">=</span> value;
+
+<span class="pl-c">/* Set the music the page will dance to.</span>
+<span class="pl-c"> * @audioElement : HTMLAudioElement</span>
+<span class="pl-c"> */</span>
 <span class="pl-smi">rythm</span>.<span class="pl-en">setMusic</span>(audioElement);
 
-<span class="pl-c">//Adjust the gain of the music.</span>
+<span class="pl-c">/* Adjust music's gain.</span>
+<span class="pl-c"> * value : Number</span>
+<span class="pl-c"> */</span>
 <span class="pl-smi">rythm</span>.<span class="pl-en">setGain</span>(value);
 
 <span class="pl-c">//Let's dance</span>
@@ -89,20 +103,32 @@
 <h2>
 <a id="classes" class="anchor" href="#classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Classes</h2>
 
-<pre><code>rythm-bass
-rythm-medium
-rythm-high
-</code></pre>
+<ul>
+<li>rythm-bass</li>
+<li>rythm-medium</li>
+<li>rythm-high</li>
+</ul>
 
 <h1>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
 
-<p>TODO</p>
+<ul>
+<li>You actually can add classes to make your HTML Elements pulse following the rythm of your music.</li>
+</ul>
 
 <h1>
 <a id="contribute" class="anchor" href="#contribute" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribute</h1>
 
-<p>TODO</p>
+<p>Any pull request will be apreciated. You can start coding on this project following this steps :</p>
+
+<ul>
+<li>Fork the project</li>
+<li>Clone your repository</li>
+<li>run <code>npm install</code>
+</li>
+<li>run <code>gulp</code> in the main folder to launch a development webserver.</li>
+<li>Enjoy the rythm.</li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/Okazari/Rythm.js">Rythm.js</a> is maintained by <a href="https://github.com/Okazari">Okazari</a>.</span>
@@ -111,18 +137,7 @@ rythm-high
       </footer>
 
     </section>
-  <script src="rythm.js"></script>
-  <script type="text/javascript">
-     window.onload = function(){
-      var rythm = new Rythm();
-      rythm.startingScale  = 0.90;
-      rythm.pulseRatio  = 0.20;
-      rythm.maxValueHistory = 50;
-      rythm.setGain(0.1);
-      var audio = document.getElementById('audio');
-      rythm.setMusic(audio);
-      rythm.start();
-    }
-  </script>
+
+  
   </body>
 </html>
