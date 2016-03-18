@@ -5,14 +5,14 @@ function Rythm(){
   that._audioCtx = new AudioContext();
   that._analyser = that._audioCtx.createAnalyser();
   that._gain = that._audioCtx.createGain();
-  that._source;
-  that._audio;
+  that._source = {};
+  that._audio = {};
   that._hzHistory = [];
-  that._analyser.fftSize = 64;
+  that._analyser.fftSize = 2048;
   that._stopped = false;
   //Public
-  that.startingScale = 1;
-  that.pulseRatio = 0.75;
+  that.startingScale = 0.75;
+  that.pulseRatio = 0.50;
   that.maxValueHistory = 100;
 
   that.setMusic = function setMusic(audioSource){
@@ -55,10 +55,18 @@ function Rythm(){
       that._hzHistory[i].push(that._frequences[i]);
       var value = that._frequences[i];
     }
-    pulse("rythm-bass", getRatio(2));
-    pulse("rythm-medium", getRatio(6));
-    pulse("rythm-high", getRatio(9));
+    pulse("rythm-bass", getAverageRatio(0, 10));
+    pulse("rythm-medium", getAverageRatio(150, 40));
+    pulse("rythm-high", getAverageRatio(500,100));
     requestAnimationFrame(renderRythm);
+  }
+
+  function getAverageRatio(startingValue, nbValue){
+    var total = 0;
+    for(var i=startingValue; i<nbValue+startingValue; i++){
+      total += getRatio(i);
+    }
+    return total/nbValue;
   }
 
   function getRatio(index){
