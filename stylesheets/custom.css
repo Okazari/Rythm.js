@@ -1,0 +1,26 @@
+.btn.custom {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(50, 50, 50, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.3rem;
+  cursor:pointer;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
+  .btn + .btn {
+    margin-left: 1rem; }
+
+.btn.custom:hover {
+  cursor:pointer;
+  color: rgba(100, 100, 100, 0.8);
+  text-decoration: none;
+  background-color: rgba(100, 100, 100, 0.2);
+  border-color: rgba(255, 255, 255, 0.3); }
+
+.button-panel{
+  padding-top: 10px;
+  margin-bottom: -50px;
+  text-align:center;
+}
