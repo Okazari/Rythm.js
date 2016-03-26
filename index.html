@@ -8,16 +8,21 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" media="screen">
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Rythm.js</h1>
+      <h1 class="project-name rythm-high">Rythm.js</h1>
       <h2 class="project-tagline">Let your page dance.</h2>
-      <a href="https://github.com/Okazari/Rythm.js" class="btn">View on GitHub</a>
-      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="https://github.com/Okazari/Rythm.js" class="btn rythm-bass">View on GitHub</a>
+      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn rythm-high">Download .zip</a>
+      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn rythm-medium">Download .tar.gz</a>
     </section>
-
+    <section class="button-panel">
+      <a id="stopButton" class="btn custom">Stop Music</a>
+      <a id="startTrackButton" class="btn custom">Start track</a>
+      <a id="startMicButton" class="btn custom">Start Microphone</a>
+    </section>
     <section class="main-content">
       <h1>
 <a id="rythmjs" class="anchor" href="#rythmjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rythm.js</h1>
@@ -168,6 +173,40 @@ Here is how the basics classes are created :</p>
 
     </section>
 
+            <script src="rythm.js"></script>
+            <script type="text/javascript">
+             window.onload = function(){
+              var rythm = new Rythm();
+              rythm.startingScale  = 0.70;
+              rythm.pulseRatio  = 0.40;
+              rythm.maxValueHistory = 50;
+              rythm.setMusic('DJSona.mp3');
+              rythm.start();
+              rythm.setGain(0.1);
+              document.getElementById('startTrackButton').addEventListener('click',function(){
+                if(rythm.stopped === false){
+                  rythm.stop();
+                }
+                rythm.setMusic('DJSona.mp3');
+                rythm.start();
+                rythm.setGain(0.1);
+              })
+              document.getElementById('startMicButton').addEventListener('click',function(){
+                if(rythm.stopped === false){
+                  rythm.stop();
+                }
+                rythm.plugMicrophone().then(function(){
+                  rythm.start();
+                  rythm.setGain(0.8);
+                })
+              })
+              document.getElementById('stopButton').addEventListener('click',function(){
+                  if(rythm.stopped === false){
+                    rythm.stop();
+                  }
+              })
+            }
+            </script>
             <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
