@@ -11,13 +11,13 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name rythm-high">Rythm.js</h1>
+      <h1 class="project-name">Rythm.js</h1>
       <h2 class="project-tagline">Let your page dance.</h2>
-      <a href="https://github.com/Okazari/Rythm.js" class="btn rythm-bass">View on GitHub</a>
-      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn rythm-high">Download .zip</a>
-      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn rythm-medium">Download .tar.gz</a>
+      <a href="https://github.com/Okazari/Rythm.js" class="btn">View on GitHub</a>
+      <a href="https://github.com/Okazari/Rythm.js/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Okazari/Rythm.js/tarball/master" class="btn">Download .tar.gz</a>
     </section>
-    <audio id="audio" src="DJSona.mp3"></audio>
+
     <section class="main-content">
       <h1>
 <a id="rythmjs" class="anchor" href="#rythmjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rythm.js</h1>
@@ -55,6 +55,8 @@
 
 <h1>
 <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h1>
+
+<p>IN PROGESS</p>
 
 <h2>
 <a id="rythm-object" class="anchor" href="#rythm-object" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rythm object</h2>
@@ -114,13 +116,6 @@
 <li>You actually can add classes to make your HTML Elements pulse following the rythm of your music.</li>
 </ul>
 
-<h2>Future features</h2>
-
-<ul>
-  <li>Add more rythm class frequences</li>
-  <li>Add rythm move class (pulse, rotate etc...)</li>
-</ul>
-
 <h1>
 <a id="contribute" class="anchor" href="#contribute" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribute</h1>
 
@@ -142,18 +137,17 @@
       </footer>
 
     </section>
-  <script src="rythm.js"></script>
-  <script type="text/javascript">
-     window.onload = function(){
-      var rythm = new Rythm();
-      rythm.startingScale  = 0.70;
-      rythm.pulseRatio  = 0.40;
-      rythm.maxValueHistory = 50;
-      rythm.setGain(0.1);
-      var audio = document.getElementById('audio');
-      rythm.setMusic(audio);
-      rythm.start();
-    }
-  </script>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-75616369-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
