@@ -35,7 +35,7 @@ function Rythm(){
 
   that.addRythm('rythm-bass','size',0,10);
   that.addRythm('rythm-medium','size',150,40);
-  that.addRythm('rythm-high','size',500,100);
+  that.addRythm('rythm-high','size',400,200);
 
   that._connectSource = function _connectSource(source){
     source.connect(that._gain);
