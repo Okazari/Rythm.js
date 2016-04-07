@@ -101,7 +101,7 @@ function Rythm(){
     that.rythmMapping.forEach(function(mappingItem){
       var elements = document.getElementsByClassName(mappingItem.elementClass);
       for(var i = 0; i < elements.length; i++){
-        elements[i].style.transform = 'scale('+1+')'
+        elements[i].style.transform = 'initial'
       }
     })
     that._init();
