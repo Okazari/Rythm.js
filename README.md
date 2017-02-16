@@ -19,7 +19,7 @@ Install with npm
 npm install rythm.js
 ```
 
-Import rhythm into your page
+Import rythm into your page
 
 ```html
 <script type="text/javascript" src="../rythm.js"></script>
