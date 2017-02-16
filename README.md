@@ -8,7 +8,7 @@ Demo at : https://okazari.github.io/Rythm.js/
 
 A javascript library that makes your page dance.
 
-Currently in developpement
+Currently in development
 
 Getting started
 ===============
