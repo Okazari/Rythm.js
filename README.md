@@ -6,9 +6,9 @@ Rythm.js
 
 Demo at : https://okazari.github.io/Rythm.js/
 
-A javascript library that makes your page dancing.
+A javascript library that makes your page dance.
 
-Actually in developpement
+Currently in developpement
 
 Getting started
 ===============
@@ -19,7 +19,7 @@ Install with npm
 npm install rythm.js
 ```
 
-Import rythm into your page
+Import rhythm into your page
 
 ```html
 <script type="text/javascript" src="../rythm.js"></script>
