@@ -72,6 +72,11 @@ rythm.maxValueHistory = value;
  */
 rythm.setMusic(audioUrl);
 
+/* Used to collaborate with other players library
+ * You can connect Rythm to an audioElement, and then control the audio with your other player
+ */
+rythm.connectExternalAudioElement(audioElement)
+
 /* Adjust music's gain.
  * @value : Number
  */
