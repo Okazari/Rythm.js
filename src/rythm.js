@@ -41,7 +41,7 @@ export default function Rythm(){
 
   that.addRythm('rythm-bass','size',0,10);
   that.addRythm('rythm-medium','size',150,40);
-  that.addRythm('rythm-high','size',500,100);
+  that.addRythm('rythm-high','size',400,200);
 
   that._createSourceFromAudioElement = function connectExternalAudioSource(audioElement) {
     return that._audioCtx.createMediaElementSource(that._audio);
@@ -55,7 +55,6 @@ export default function Rythm(){
   }
 
   that._connectSource = function _connectSource(source){
-    console.log(source)
     source.connect(that._gain);
     that._gain.connect(that._analyser);
     if(that._rythmInputType !== that._rythmInputTypeList['STREAM']){
