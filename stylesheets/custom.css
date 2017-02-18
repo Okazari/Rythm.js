@@ -9,8 +9,6 @@
   border-radius: 0.3rem;
   cursor:pointer;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
-  .btn + .btn {
-    margin-left: 1rem; }
 
 .btn.custom:hover {
   cursor:pointer;
