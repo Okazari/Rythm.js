@@ -15,11 +15,15 @@ export default function Rythm(){
     that._analyser.fftSize = 2048;
   }
 
+  that._init();
+
   that.stopped = false;
   that._rythmInputTypeList = {
     "TRACK" : 0,
-    "STREAM" : 1
+    "STREAM" : 1,
+    "EXTERNAL" : 2,
   }
+
   //Public
   that.startingScale = 0.75;
   that.pulseRatio = 0.50;
@@ -39,25 +43,35 @@ export default function Rythm(){
   that.addRythm('rythm-medium','size',150,40);
   that.addRythm('rythm-high','size',500,100);
 
+  that._createSourceFromAudioElement = function connectExternalAudioSource(audioElement) {
+    return that._audioCtx.createMediaElementSource(that._audio);
+  }
+
+  that.connectExternalAudioElement = function connectExternalAudioElement(audioElement) {
+    that._audio = audioElement;
+    that._rythmInputType = that._rythmInputTypeList['EXTERNAL'];
+    that._source = that._createSourceFromAudioElement(that._audio);
+    that._connectSource(that._source);
+  }
+
   that._connectSource = function _connectSource(source){
+    console.log(source)
     source.connect(that._gain);
     that._gain.connect(that._analyser);
-    if(that._rythmInputType === that._rythmInputTypeList['TRACK']){
+    if(that._rythmInputType !== that._rythmInputTypeList['STREAM']){
       that._analyser.connect(that._audioCtx.destination);
+      that._audio.addEventListener("ended", that.stop);
     }
   }
 
   that.setMusic = function setMusic(trackUrl){
-    that._init();
     that._audio = new Audio(trackUrl);
     that._rythmInputType = that._rythmInputTypeList['TRACK'];
-    that._source = that._audioCtx.createMediaElementSource(that._audio);
+    that._source = that._createSourceFromAudioElement(that._audio);
     that._connectSource(that._source);
-    that._audio.addEventListener("ended", that.stop);
   }
 
   that.plugMicrophone = function plugMicrophone(){
-    that._init();
     return that._getMicrophoneStream().then(function(stream){
       that._audio = stream;
       that._rythmInputType = that._rythmInputTypeList['STREAM'];
@@ -107,7 +121,6 @@ export default function Rythm(){
         elements[i].style.transform = 'initial'
       }
     })
-    that._init();
     that.stopped = true;
   }
 
