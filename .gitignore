@@ -34,3 +34,5 @@ node_modules
 
 # PHP is occasionnally useful, but not this time
 *.php
+
+/rythm.js

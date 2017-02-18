@@ -3,15 +3,21 @@
   "version": "1.2.3",
   "description": "",
   "main": "rythm.js",
+  "files": [
+    "rythm.js"
+  ],
   "scripts": {
     "start": "gulp",
-    "test": "echo \"No test specified\" && exit 0"
+    "prepublish": "npm run build",
+    "test": "echo \"No test specified\" && exit 0",
+    "build": "gulp build"
   },
   "author": "Benjamin Plouzennec <plouzennec.benjamin@gmail.com>",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp-webserver": "^0.9.1"
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1",
+    "rollup": "^0.41.4"
   }
 }

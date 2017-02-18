@@ -1,4 +1,4 @@
-function Rythm(){
+export default function Rythm(){
 
   var that = this;
 

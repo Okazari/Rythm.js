@@ -19,10 +19,12 @@ Install with npm
 npm install rythm.js
 ```
 
+CDN: https://unpkg.com/rythm.js/
+
 Import rythm into your page
 
 ```html
-<script type="text/javascript" src="../rythm.js"></script>
+<script type="text/javascript" src="/path/to/rythm.js"></script>
 ```
 
 Add one of the rythm css classes to indicate which element will dance.
