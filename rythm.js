@@ -89,7 +89,7 @@ var Analyser = function Analyser() {
 
 var Analyser$1 = new Analyser();
 
-var Player = function Player() {
+var Player = function Player(forceAudioContext) {
   var _this = this;
 
   classCallCheck(this, Player);
@@ -109,7 +109,6 @@ var Player = function Player() {
       _this.source = _this.createSourceFromAudioElement(_this.audio);
     } else {
       _this.source = _this.connectedSources[connectedIndex];
-      console.log(_this.source);
     }
     _this.connectSource(_this.source);
   };
@@ -168,8 +167,8 @@ var Player = function Player() {
     }
   };
 
-  this.browserAudioCtx = AudioContext || webkitAudioContext;
-  this.audioCtx = new this.browserAudioCtx();
+  this.browserAudioCtx = window.AudioContext || window.webkitAudioContext;
+  this.audioCtx = forceAudioContext || new this.browserAudioCtx();
   this.connectedSources = [];
   Analyser$1.initialise(this.audioCtx.createAnalyser());
   this.gain = this.audioCtx.createGain();
@@ -182,8 +181,6 @@ var Player = function Player() {
     "EXTERNAL": 2
   };
 };
-
-var player = new Player();
 
 var pulse = (function (elem, value) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
@@ -290,7 +287,7 @@ var Dancer = function () {
 
 var dancer = new Dancer();
 
-var Rythm$1 = function Rythm() {
+var Rythm$1 = function Rythm(forceAudioContext) {
   var _this = this;
 
   classCallCheck(this, Rythm);
@@ -309,6 +306,10 @@ var Rythm$1 = function Rythm() {
 
   this.setGain = function (value) {
     return _this.player.setGain(value);
+  };
+
+  this.connectSource = function (source) {
+    return _this.player.connectSource(source);
   };
 
   this.addRythm = function (elementClass, type, startValue, nbValue, options) {
@@ -348,7 +349,7 @@ var Rythm$1 = function Rythm() {
     _this.player.stop();
   };
 
-  this.player = player;
+  this.player = new Player(forceAudioContext);
   this.analyser = Analyser$1;
   this.maxValueHistory = Analyser$1.maxValueHistory;
   this.dancer = dancer;
