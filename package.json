@@ -15,7 +15,10 @@
   },
   "author": "Benjamin Plouzennec <plouzennec.benjamin@gmail.com>",
   "license": "GNU GPL",
-  "dependencies": {},
+  "dependencies": {
+    "rollup-plugin-uglify": "^2.0.1",
+    "uglify-es": "^3.0.28"
+  },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "babel-plugin-external-helpers": "^6.22.0",
