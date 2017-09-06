@@ -1,4 +1,4 @@
-Rythm.js - v2.0.7
+Rythm.js - v2.1.0
 ========
 
 [![Build Status](https://travis-ci.org/Okazari/Rythm.js.svg?branch=master)](https://travis-ci.org/Okazari/Rythm.js)
@@ -30,7 +30,7 @@ Good old way
 Import rythm into your page
 
 ```html
-<script type="text/javascript" src="/path/to/rythm.js"></script>
+<script type="text/javascript" src="/path/to/rythm.min.js"></script>
 ```
 
 Add one of the rythm css classes to indicate which element will dance.
