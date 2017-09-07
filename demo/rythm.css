@@ -7,8 +7,7 @@ body {
 }
 
 #player {
-  position: fixed;
-  bottom: -5px;
+  margin-bottom: 25px;
   padding: 10px;
   background-color: #000010;
   border-radius: 5px;
