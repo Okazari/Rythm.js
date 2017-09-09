@@ -6,5 +6,5 @@ export default (elem, value, options = {}) => {
     min = -min
   }
   const twist = (max - min) * value
-  elem.style.transform = `translateX(${min + twist}px)`
+  elem.style.transform = `translate3d(${min + twist}px, 0, 0)`
 }

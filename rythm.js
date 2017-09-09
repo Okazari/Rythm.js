@@ -188,7 +188,7 @@ var pulse = (function (elem, value) {
   var max = !isNaN(options.max) ? options.max : 1.25;
   var min = !isNaN(options.min) ? options.min : 0.75;
   var scale = (max - min) * value;
-  elem.style.transform = "scale(" + (min + scale) + ")";
+  elem.style.transform = "scale(" + (min + scale) + ") translateZ(0)";
 });
 
 var shake = (function (elem, value) {
@@ -201,7 +201,7 @@ var shake = (function (elem, value) {
     min = -min;
   }
   var twist = (max - min) * value;
-  elem.style.transform = 'translateX(' + (min + twist) + 'px)';
+  elem.style.transform = 'translate3d(' + (min + twist) + 'px, 0, 0)';
 });
 
 var jump = (function (elem, value) {
@@ -210,7 +210,7 @@ var jump = (function (elem, value) {
   var max = !isNaN(options.max) ? options.max : 30;
   var min = !isNaN(options.min) ? options.min : 0;
   var jump = (max - min) * value;
-  elem.style.transform = "translateY(" + -jump + "px)";
+  elem.style.transform = "translate3d(0, " + -jump + "px, 0)";
 });
 
 var twist = (function (elem, value) {
@@ -223,7 +223,7 @@ var twist = (function (elem, value) {
     min = -min;
   }
   var twist = (max - min) * value;
-  elem.style.transform = 'rotate(' + (min + twist) + 'deg)';
+  elem.style.transform = 'rotate(' + (min + twist) + 'deg) translateZ(0)';
 });
 
 var vanish = (function (elem, value) {

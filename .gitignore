@@ -39,3 +39,8 @@ node_modules
 
 # PHP is occasionnally useful, but not this time
 *.php
+
+### OSX ###
+*.DS_Store
+.AppleDouble
+.LSOverride

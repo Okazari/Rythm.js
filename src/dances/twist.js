@@ -6,5 +6,5 @@ export default (elem, value, options = {}) => {
     min = -min
   }
   const twist = (max - min) * value
-  elem.style.transform = `rotate(${min + twist}deg)`
+  elem.style.transform = `rotate(${min + twist}deg) translateZ(0)`
 }
