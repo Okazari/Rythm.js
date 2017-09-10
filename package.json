@@ -2,6 +2,7 @@
   "name": "rythm.js",
   "version": "2.1.1",
   "description": "",
+  "private": true,
   "main": "rythm.js",
   "files": [
     "rythm.js",
