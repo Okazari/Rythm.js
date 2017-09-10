@@ -14,8 +14,12 @@
     "test": "echo \"No test specified\" && exit 0",
     "build": "node build.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Okazari/Rythm.js"
+  },
   "author": "Benjamin Plouzennec <plouzennec.benjamin@gmail.com>",
-  "license": "GNU GPL",
+  "license": "GPL-3.0",
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^7.1.1",
