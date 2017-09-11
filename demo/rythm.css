@@ -6,6 +6,38 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+#shout {
+  position: fixed;
+  top: -1px;
+  right: 20px;
+  color: cadetblue;
+  border: solid 1px cadetblue;
+  padding: 0px 20px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  #shout {
+    display: none;
+  }
+}
+
+.thanks {
+  margin: 10px;
+}
+
+.contributor-login {
+  margin-bottom: 10px;;
+}
+
+#shout img {
+  width: 70px;
+  height: 70px;
+  border-radius: 40px;
+}
+
 #player, #playerBottom {
   margin-bottom: 25px;
   padding: 10px;

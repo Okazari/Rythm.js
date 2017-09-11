@@ -1,5 +1,20 @@
 window.onload = function(){
 
+  if(fetch) {
+    fetch('https://api.github.com/repos/okazari/rythm.js/stats/contributors')
+    .then(d => d.json())
+    .then((data) => {
+      const contributors = data.filter(d => d.author.login !== 'bplouzennec' && d.author.login !== 'Okazari')
+      const contributor = contributors[Math.floor(Math.random() * contributors.length)].author
+      console.log(contributor)
+      document.getElementById('shout').innerHTML = `
+        <div class="thanks">Thanks for your contribution !</div>
+        <img src="${contributor.avatar_url}" />
+        <div class="contributor-login">${contributor.login}</div>
+      `
+    })
+  }
+
   var rythm = new Rythm();
   var audio = document.getElementById('audio');
 
@@ -59,7 +74,6 @@ window.onload = function(){
     var bottomPlayer = document.getElementById('playerBottom')
     var shouldShow = !bottomPlayerShow && body.scrollTop > showPoint
     var shouldHide = bottomPlayerShow && body.scrollTop <= showPoint
-    console.log(bottomPlayerShow, shouldShow, shouldHide)
     if(shouldShow) {
       bottomPlayerShow = true
       bottomPlayer.className = 'show'
