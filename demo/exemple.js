@@ -34,6 +34,9 @@ window.onload = function(){
   rythm.addRythm('color1','color',0,10)
   rythm.addRythm('color2','color',0,10, { from: [0,0,255], to:[255,0,255] })
   rythm.addRythm('color3','color',0,10, { from: [255,255,0], to:[255,0,0] })
+  rythm.addRythm('bar1','bar',0,10)
+  rythm.addRythm('bar2','bar',0,10, { from: [0,0,255], to:[255,0,255] })
+  rythm.addRythm('bar3','bar',0,10, { from: [255,255,0], to:[255,0,0] })
 
   var onMicClick = function(){
     if(rythm.stopped === false){
