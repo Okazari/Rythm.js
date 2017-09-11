@@ -2,6 +2,7 @@ window.onload = function(){
 
   var rythm = new Rythm();
   var audio = document.getElementById('audio');
+  var elems = document.body.querySelectorAll('*');
 
   rythm.addRythm('pulse1','pulse',0,10)
   rythm.addRythm('pulse2','pulse',0,10, { min: 0.1, max: 1 })
@@ -33,24 +34,44 @@ window.onload = function(){
     if(rythm.stopped === false){
       rythm.stop();
     }
-    // rythm.connectExternalAudioElement(audio)
-    rythm.setMusic("./samples/rythmC.mp3");
+    rythm.connectExternalAudioElement(audio)
+    // rythm.setMusic("./samples/rythmC.mp3");
+    audio.play()
     rythm.setGain(0.1)
     rythm.start();
   }
 
   var onStopClick = function(){
     if(rythm.stopped === false){
+      audio.pause()
       rythm.stop();
+    }
+  }
+
+  var enableResetButton = function() {
+    if (reset.disabled)
+      reset.disabled = false
+  }
+
+  var disableResetButton = function() {
+    reset.disabled = true
+  }
+
+  var resetTransform = function() {
+    for (var i = 0; i < elems.length; i++) {
+      if (elems[i].style.transform) {
+        elems[i].style.transform = 'none'
+      }
     }
   }
 
   document.getElementById('mic').addEventListener('click', onMicClick)
   document.getElementById('micBottom').addEventListener('click', onMicClick)
-  document.getElementById('start').addEventListener('click', onStartClick)
-  document.getElementById('startBottom').addEventListener('click', onStartClick)
-  document.getElementById('stop').addEventListener('click', onStopClick)
-  document.getElementById('stopBottom').addEventListener('click', onStopClick)
+  document.getElementById('start').addEventListener('click', function() { onStartClick(); enableResetButton() })
+  document.getElementById('startBottom').addEventListener('click', function() { onStartClick(); enableResetButton() })
+  document.getElementById('stop').addEventListener('click', function() { onStopClick(); resetTransform() })
+  document.getElementById('stopBottom').addEventListener('click', function() { onStopClick(); resetTransform() })
+  document.getElementById('reset').addEventListener('click', function() { disableResetButton(); window.location.reload() })
 
   var bottomPlayerShow = false
   var showPoint = 205

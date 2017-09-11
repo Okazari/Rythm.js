@@ -6,6 +6,23 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+#reset {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+#reset:disabled {
+  color: grey;
+  cursor: default;
+}
+#reset:enabled {
+  color: yellow;
+}
+#reset:hover:enabled {
+  background-color: yellow;
+  color: black;
+}
+
 #player, #playerBottom {
   margin-bottom: 25px;
   padding: 10px;
