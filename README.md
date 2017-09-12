@@ -1,4 +1,4 @@
-<♫/> Rythm.js - v2.1.1
+<♫/> Rythm.js - v2.2.0
 ========
 
 [![Build Status](https://travis-ci.org/Okazari/Rythm.js.svg?branch=master)](https://travis-ci.org/Okazari/Rythm.js)
@@ -119,6 +119,9 @@ rythm.start();
 
 //Stop the party
 rythm.stop();
+
+//Stop the party and clean up the house (reset elements)
+rythm.stop(true);
 ```
 
 Build in classes with "pulse" effect
