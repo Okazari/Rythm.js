@@ -29,7 +29,17 @@ body {
 }
 
 .contributor-login {
-  margin-bottom: 10px;;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contributor-login-link {
+  color: cadetblue;
+}
+
+.contributor-login-link:hover {
+  background-color: cadetblue;
+  color: black;
 }
 
 #shout img {

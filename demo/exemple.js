@@ -9,8 +9,8 @@ window.onload = function(){
       console.log(contributor)
       document.getElementById('shout').innerHTML = `
         <div class="thanks">Thanks for your contribution !</div>
-        <img src="${contributor.avatar_url}" />
-        <div class="contributor-login">${contributor.login}</div>
+        <img class="contributor-avatar" src="${contributor.avatar_url}" />
+        <div class="contributor-login"><a class="contributor-login-link" href="${contributor.html_url}">${contributor.login}</a></div>
       `
     })
   }
@@ -34,6 +34,10 @@ window.onload = function(){
   rythm.addRythm('color1','color',0,10)
   rythm.addRythm('color2','color',0,10, { from: [0,0,255], to:[255,0,255] })
   rythm.addRythm('color3','color',0,10, { from: [255,255,0], to:[255,0,0] })
+  rythm.addRythm('thanks','shake',0,10)
+  rythm.addRythm('contributor-avatar', 'pulse', 0, 10)
+  rythm.addRythm('contributor-login-link','twist',0,10)
+  rythm.addRythm('shout','color',0,10, { from: [128, 128, 128], to:[0, 0, 0] })
 
   var onMicClick = function(){
     if(rythm.stopped === false){
