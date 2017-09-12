@@ -8,3 +8,7 @@ export default (elem, value, options = {}) => {
     elem.style.opacity = min + vanish
   }
 }
+
+export const reset = elem => {
+  elem.style.opacity = ''
+}

@@ -13,6 +13,7 @@ export default class Rythm {
     this.addRythm('rythm-bass', 'pulse', 0, 10)
     this.addRythm('rythm-medium', 'pulse', 150, 40)
     this.addRythm('rythm-high', 'pulse', 400, 200)
+    this.animationFrameRequest = void 0
   }
 
   connectExternalAudioElement = (audioElement) => this.player.connectExternalAudioElement(audioElement)
@@ -52,9 +53,18 @@ export default class Rythm {
     requestAnimationFrame(this.renderRythm)
   }
 
-  stop = () => {
+  resetRythm = () => {
+    this.rythms.forEach(mappingItem => {
+      const { type, elementClass, nbValue, startValue, options } = mappingItem
+      this.dancer.reset(type, elementClass)
+    })
+  }
+
+  stop = (reset) => {
     this.stopped = true
     this.player.stop()
+    if (this.animationFrameRequest) cancelAnimationFrame(this.animationFrameRequest)
+    if (reset) this.resetRythm()
   }
 
 }

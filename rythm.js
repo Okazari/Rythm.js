@@ -188,8 +188,12 @@ var pulse = (function (elem, value) {
   var max = !isNaN(options.max) ? options.max : 1.25;
   var min = !isNaN(options.min) ? options.min : 0.75;
   var scale = (max - min) * value;
-  elem.style.transform = "scale(" + (min + scale) + ") translateZ(0)";
+  elem.style.transform = 'scale(' + (min + scale) + ') translateZ(0)';
 });
+
+var reset = function reset(elem) {
+  elem.style.transform = '';
+};
 
 var shake = (function (elem, value) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
@@ -204,14 +208,22 @@ var shake = (function (elem, value) {
   elem.style.transform = 'translate3d(' + (min + twist) + 'px, 0, 0)';
 });
 
+var reset$1 = function reset(elem) {
+  elem.style.transform = '';
+};
+
 var jump = (function (elem, value) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
   var max = !isNaN(options.max) ? options.max : 30;
   var min = !isNaN(options.min) ? options.min : 0;
   var jump = (max - min) * value;
-  elem.style.transform = "translate3d(0, " + -jump + "px, 0)";
+  elem.style.transform = 'translate3d(0, ' + -jump + 'px, 0)';
 });
+
+var reset$2 = function reset(elem) {
+  elem.style.transform = '';
+};
 
 var twist = (function (elem, value) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
@@ -226,6 +238,10 @@ var twist = (function (elem, value) {
   elem.style.transform = 'rotate(' + (min + twist) + 'deg) translateZ(0)';
 });
 
+var reset$3 = function reset(elem) {
+  elem.style.transform = '';
+};
+
 var vanish = (function (elem, value) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
@@ -239,6 +255,10 @@ var vanish = (function (elem, value) {
   }
 });
 
+var reset$4 = function reset(elem) {
+  elem.style.opacity = '';
+};
+
 var color = (function (elem, value) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
@@ -247,27 +267,35 @@ var color = (function (elem, value) {
   var scaleR = (to[0] - from[0]) * value;
   var scaleG = (to[1] - from[1]) * value;
   var scaleB = (to[2] - from[2]) * value;
-  elem.style.backgroundColor = "rgb(" + Math.floor(to[0] - scaleR) + ", " + Math.floor(to[1] - scaleG) + ", " + Math.floor(to[2] - scaleB) + ")";
+  elem.style.backgroundColor = 'rgb(' + Math.floor(to[0] - scaleR) + ', ' + Math.floor(to[1] - scaleG) + ', ' + Math.floor(to[2] - scaleB) + ')';
 });
+
+var reset$5 = function reset(elem) {
+  elem.style.backgroundColor = '';
+};
 
 var Dancer = function () {
   function Dancer() {
     classCallCheck(this, Dancer);
 
     this.dances = {};
-    this.registerDance('size', pulse);
-    this.registerDance('pulse', pulse);
-    this.registerDance('shake', shake);
-    this.registerDance('jump', jump);
-    this.registerDance('twist', twist);
-    this.registerDance('vanish', vanish);
-    this.registerDance('color', color);
+    this.resets = {};
+    this.registerDance('size', pulse, reset);
+    this.registerDance('pulse', pulse, reset);
+    this.registerDance('shake', shake, reset$1);
+    this.registerDance('jump', jump, reset$2);
+    this.registerDance('twist', twist, reset$3);
+    this.registerDance('vanish', vanish, reset$4);
+    this.registerDance('color', color, reset$5);
   }
 
   createClass(Dancer, [{
     key: 'registerDance',
-    value: function registerDance(type, value) {
-      this.dances[type] = value;
+    value: function registerDance(type, dance) {
+      var reset$$1 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
+
+      this.dances[type] = dance;
+      this.resets[type] = reset$$1;
     }
   }, {
     key: 'dance',
@@ -279,6 +307,18 @@ var Dancer = function () {
       var elements = document.getElementsByClassName(className);
       Array.from(elements).forEach(function (elem) {
         return dance(elem, ratio, options);
+      });
+    }
+  }, {
+    key: 'reset',
+    value: function reset$$1(type, className) {
+      var reset$$1 = type;
+      if (typeof type === 'string') {
+        reset$$1 = this.resets[type] || this.resets['pulse'];
+      }
+      var elements = document.getElementsByClassName(className);
+      Array.from(elements).forEach(function (elem) {
+        return reset$$1(elem);
       });
     }
   }]);
@@ -344,9 +384,23 @@ var Rythm$1 = function Rythm(forceAudioContext) {
     requestAnimationFrame(_this.renderRythm);
   };
 
-  this.stop = function () {
+  this.resetRythm = function () {
+    _this.rythms.forEach(function (mappingItem) {
+      var type = mappingItem.type,
+          elementClass = mappingItem.elementClass,
+          nbValue = mappingItem.nbValue,
+          startValue = mappingItem.startValue,
+          options = mappingItem.options;
+
+      _this.dancer.reset(type, elementClass);
+    });
+  };
+
+  this.stop = function (reset) {
     _this.stopped = true;
     _this.player.stop();
+    if (_this.animationFrameRequest) cancelAnimationFrame(_this.animationFrameRequest);
+    if (reset) _this.resetRythm();
   };
 
   this.player = new Player(forceAudioContext);
@@ -357,6 +411,7 @@ var Rythm$1 = function Rythm(forceAudioContext) {
   this.addRythm('rythm-bass', 'pulse', 0, 10);
   this.addRythm('rythm-medium', 'pulse', 150, 40);
   this.addRythm('rythm-high', 'pulse', 400, 200);
+  this.animationFrameRequest = void 0;
 };
 
 return Rythm$1;

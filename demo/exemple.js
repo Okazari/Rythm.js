@@ -60,12 +60,20 @@ window.onload = function(){
     }
   }
 
+  var onStopResetClick = function(){
+    if(rythm.stopped === false){
+      rythm.stop(true);
+    }
+  }
+
   document.getElementById('mic').addEventListener('click', onMicClick)
   document.getElementById('micBottom').addEventListener('click', onMicClick)
   document.getElementById('start').addEventListener('click', onStartClick)
   document.getElementById('startBottom').addEventListener('click', onStartClick)
   document.getElementById('stop').addEventListener('click', onStopClick)
   document.getElementById('stopBottom').addEventListener('click', onStopClick)
+  document.getElementById('stopReset').addEventListener('click', onStopResetClick)
+  document.getElementById('stopResetBottom').addEventListener('click', onStopResetClick)
 
   var bottomPlayerShow = false
   var showPoint = 205

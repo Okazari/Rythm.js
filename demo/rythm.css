@@ -88,11 +88,11 @@ a:hover {
   color: black;
 }
 
-#stop, #stopBottom {
+#stop, #stopReset, #stopBottom, #stopResetBottom {
   color: indianred;
 }
 
-#stop:hover, #stopBottom:hover {
+#stop:hover, #stopReset:hover, #stopBottom:hover, #stopResetBottom:hover {
   background-color: indianred;
   color: black;
 }

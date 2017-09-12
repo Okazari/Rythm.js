@@ -4,3 +4,7 @@ export default (elem, value, options = {}) => {
   const scale = (max - min) * value
   elem.style.transform = `scale(${min + scale}) translateZ(0)`
 }
+
+export const reset = elem => {
+  elem.style.transform = ''
+}

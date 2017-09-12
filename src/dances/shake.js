@@ -8,3 +8,7 @@ export default (elem, value, options = {}) => {
   const twist = (max - min) * value
   elem.style.transform = `translate3d(${min + twist}px, 0, 0)`
 }
+
+export const reset = elem => {
+  elem.style.transform = ''
+}

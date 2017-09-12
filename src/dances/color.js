@@ -6,3 +6,7 @@ export default (elem, value, options = {}) => {
   const scaleB = (to[2] - from[2]) * value
   elem.style.backgroundColor = `rgb(${Math.floor(to[0] - scaleR)}, ${Math.floor(to[1] - scaleG)}, ${Math.floor(to[2] - scaleB)})`
 }
+
+export const reset = elem => {
+  elem.style.backgroundColor = ''
+}
