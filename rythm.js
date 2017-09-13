@@ -273,6 +273,20 @@ var color = (function (elem, value) {
 var reset$5 = function reset(elem) {
   elem.style.backgroundColor = '';
 };
+                      
+var radius = (function (elem, value) {
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+  var max = !isNaN(options.max) ? options.max : 25;
+  var min = !isNaN(options.min) ? options.min : 0;
+  var borderRadius = (max - min) * value;
+  if (options.reverse) {
+    borderRadius = max - borderRadius;
+  } else {
+    borderRadius = min + borderRadius;
+  }
+  elem.style.borderRadius = borderRadius + "px";
+});
 
 var Dancer = function () {
   function Dancer() {
@@ -287,6 +301,7 @@ var Dancer = function () {
     this.registerDance('twist', twist, reset$3);
     this.registerDance('vanish', vanish, reset$4);
     this.registerDance('color', color, reset$5);
+    this.registerDance('radius', radius);
   }
 
   createClass(Dancer, [{
