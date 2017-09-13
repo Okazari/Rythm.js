@@ -4,6 +4,8 @@ export default (elem, value, options = {}) => {
     let borderRadius = (max - min) * value
     if(options.reverse) {
       borderRadius = max - borderRadius
+    } else {
+      borderRadius = min + borderRadius
     }
     elem.style.borderRadius = `${borderRadius}px`
   }

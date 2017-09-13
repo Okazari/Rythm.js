@@ -258,6 +258,8 @@ var radius = (function (elem, value) {
   var borderRadius = (max - min) * value;
   if (options.reverse) {
     borderRadius = max - borderRadius;
+  } else {
+    borderRadius = min + borderRadius;
   }
   elem.style.borderRadius = borderRadius + "px";
 });
