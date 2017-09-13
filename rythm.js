@@ -381,7 +381,7 @@ var Rythm$1 = function Rythm(forceAudioContext) {
 
       _this.dancer.dance(type, elementClass, _this.analyser.getRangeAverageRatio(startValue, nbValue), options);
     });
-    requestAnimationFrame(_this.renderRythm);
+    _this.animationFrameRequest = requestAnimationFrame(_this.renderRythm);
   };
 
   this.resetRythm = function () {

@@ -50,7 +50,7 @@ export default class Rythm {
       const { type, elementClass, nbValue, startValue, options } = mappingItem
       this.dancer.dance(type, elementClass, this.analyser.getRangeAverageRatio(startValue, nbValue), options)
     })
-    requestAnimationFrame(this.renderRythm)
+    this.animationFrameRequest = requestAnimationFrame(this.renderRythm)
   }
 
   resetRythm = () => {
