@@ -166,6 +166,9 @@ Here are the build in dances and their options
 + color
   + from : Array of integer between 0 and 255 corresponding to a RGB color. Default: `[0,0,0]`
   + to : Array of integer between 0 and 255 corresponding to a RGB color. Default: `[255,255,255]`
++ radius
+  + min: Minimum value given to `border-radius`. Default: `0`
+  + max: Maximum value given to `border-radius`. Default: `25`
 
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/)
 

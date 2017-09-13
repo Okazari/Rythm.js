@@ -4,6 +4,7 @@ import jump from './dances/jump.js'
 import twist from './dances/twist.js'
 import vanish from './dances/vanish.js'
 import color from './dances/color.js'
+import radius from './dances/radius.js'
 
 class Dancer {
   constructor() {
@@ -15,6 +16,7 @@ class Dancer {
     this.registerDance('twist', twist)
     this.registerDance('vanish', vanish)
     this.registerDance('color', color)
+    this.registerDance('radius', radius)
   }
 
   registerDance(type, value) {

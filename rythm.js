@@ -250,6 +250,15 @@ var color = (function (elem, value) {
   elem.style.backgroundColor = "rgb(" + Math.floor(to[0] - scaleR) + ", " + Math.floor(to[1] - scaleG) + ", " + Math.floor(to[2] - scaleB) + ")";
 });
 
+var radius = (function (elem, value) {
+    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+    var max = !isNaN(options.max) ? options.max : 25;
+    var min = !isNaN(options.min) ? options.min : 0;
+    var borderRadius = (max - min) * value;
+    elem.style.borderRadius = borderRadius + "px";
+});
+
 var Dancer = function () {
   function Dancer() {
     classCallCheck(this, Dancer);
@@ -262,6 +271,7 @@ var Dancer = function () {
     this.registerDance('twist', twist);
     this.registerDance('vanish', vanish);
     this.registerDance('color', color);
+    this.registerDance('radius', radius);
   }
 
   createClass(Dancer, [{

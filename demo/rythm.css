@@ -158,6 +158,11 @@ section:last-child {
   /*background-color: white;*/
 }
 
+.radius1{
+  border: 1px solid white;
+  padding: 1px;
+}
+
 /* Pretty printing styles. Used with prettify.js. */
 /* Vim sunburst theme by David Leibovic */
 
