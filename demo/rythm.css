@@ -158,7 +158,7 @@ section:last-child {
   /*background-color: white;*/
 }
 
-.radius1{
+.radius1, .radius2{
   border: 1px solid white;
   padding: 1px;
 }

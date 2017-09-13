@@ -251,12 +251,15 @@ var color = (function (elem, value) {
 });
 
 var radius = (function (elem, value) {
-    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
-    var max = !isNaN(options.max) ? options.max : 25;
-    var min = !isNaN(options.min) ? options.min : 0;
-    var borderRadius = (max - min) * value;
-    elem.style.borderRadius = borderRadius + "px";
+  var max = !isNaN(options.max) ? options.max : 25;
+  var min = !isNaN(options.min) ? options.min : 0;
+  var borderRadius = (max - min) * value;
+  if (options.reverse) {
+    borderRadius = max - borderRadius;
+  }
+  elem.style.borderRadius = borderRadius + "px";
 });
 
 var Dancer = function () {

@@ -35,6 +35,7 @@ window.onload = function(){
   rythm.addRythm('color2','color',0,10, { from: [0,0,255], to:[255,0,255] })
   rythm.addRythm('color3','color',0,10, { from: [255,255,0], to:[255,0,0] })
   rythm.addRythm('radius1', 'radius', 5, 25)
+  rythm.addRythm('radius2', 'radius', 5, 25, { reverse: true })
   rythm.addRythm('thanks','shake',0,10, { min: -10, max: 10 })
   rythm.addRythm('contributor-avatar', 'pulse', 0, 10, { min: 0.5, max: 1.1 })
   rythm.addRythm('contributor-login-link','jump',0,10, { min: -15, max: 0 })
