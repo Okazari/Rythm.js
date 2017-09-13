@@ -10,6 +10,7 @@ import radius from './dances/radius.js'
 class Dancer {
   constructor() {
     this.resets = {}
+    this.dances = {}
     this.registerDance('size', pulse, pulseReset)
     this.registerDance('pulse', pulse, pulseReset)
     this.registerDance('shake', shake, shakeReset)
