@@ -1,5 +1,20 @@
 window.onload = function(){
 
+  if(fetch) {
+    fetch('https://api.github.com/repos/okazari/rythm.js/stats/contributors')
+    .then(d => d.json())
+    .then((data) => {
+      const contributors = data.filter(d => d.author.login !== 'bplouzennec' && d.author.login !== 'Okazari')
+      const contributor = contributors[Math.floor(Math.random() * contributors.length)].author
+      console.log(contributor)
+      document.getElementById('shout').innerHTML = `
+        <div class="thanks">Thanks for your contribution !</div>
+        <img class="contributor-avatar" src="${contributor.avatar_url}" />
+        <div class="contributor-login"><a class="contributor-login-link" href="${contributor.html_url}">${contributor.login}</a></div>
+      `
+    })
+  }
+
   var rythm = new Rythm();
   var audio = document.getElementById('audio');
 
@@ -19,6 +34,9 @@ window.onload = function(){
   rythm.addRythm('color1','color',0,10)
   rythm.addRythm('color2','color',0,10, { from: [0,0,255], to:[255,0,255] })
   rythm.addRythm('color3','color',0,10, { from: [255,255,0], to:[255,0,0] })
+  rythm.addRythm('thanks','shake',0,10, { min: -10, max: 10 })
+  rythm.addRythm('contributor-avatar', 'pulse', 0, 10, { min: 0.5, max: 1.1 })
+  rythm.addRythm('contributor-login-link','jump',0,10, { min: -15, max: 0 })
 
   var onMicClick = function(){
     if(rythm.stopped === false){
@@ -59,7 +77,6 @@ window.onload = function(){
     var bottomPlayer = document.getElementById('playerBottom')
     var shouldShow = !bottomPlayerShow && body.scrollTop > showPoint
     var shouldHide = bottomPlayerShow && body.scrollTop <= showPoint
-    console.log(bottomPlayerShow, shouldShow, shouldHide)
     if(shouldShow) {
       bottomPlayerShow = true
       bottomPlayer.className = 'show'
