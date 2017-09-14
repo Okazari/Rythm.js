@@ -173,6 +173,10 @@ Here are the build in dances and their options
   + min : Minimum value given to `border-radius`. Default: `0`
   + max : Maximum value given to `border-radius`. Default: `25`
   + reverse : Boolean to make effect from max to min. Default: `false`
++ swing
+  + curve : Whether the element should curve `up` or `down`. Default: `down`
+  + direction : Whether the element should swing `right` or `left`. Default: `right`
+  + radius : How far the element will swing. Default: `20`
 
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/)
 

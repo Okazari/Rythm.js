@@ -6,6 +6,7 @@ import twist, {reset as twistReset} from './dances/twist.js'
 import vanish, {reset as vanishReset} from './dances/vanish.js'
 import color, {reset as colorReset} from './dances/color.js'
 import radius, {reset as radiusReset} from './dances/radius.js'
+import swing, {reset as swingReset} from './dances/swing.js'
 
 class Dancer {
   constructor() {
@@ -19,6 +20,7 @@ class Dancer {
     this.registerDance('vanish', vanish, vanishReset)
     this.registerDance('color', color, colorReset)
     this.registerDance('radius', radius, radiusReset)
+    this.registerDance('swing', swing, swingReset)
   }
 
   registerDance(type, dance, reset = () => {}) {

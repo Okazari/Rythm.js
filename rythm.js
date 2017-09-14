@@ -292,6 +292,30 @@ var reset$6 = function reset(elem) {
   elem.style.borderRadius = '';
 };
 
+var coefficientMap = {
+  up: -1,
+  down: 1,
+  left: 1,
+  right: -1
+};
+
+var swing = (function (elem, value) {
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+  var radius = !isNaN(options.radius) ? options.radius : 20;
+  var direction = Object.keys(coefficientMap).includes(options.direction) ? options.direction : 'right';
+  var curve = Object.keys(coefficientMap).includes(options.curve) ? options.curve : 'down';
+  var _ref = [coefficientMap[direction], coefficientMap[curve]],
+      xCoefficient = _ref[0],
+      yCoefficient = _ref[1];
+
+  elem.style.transform = 'translate3d(' + xCoefficient * radius * Math.cos(value * Math.PI) + 'px, ' + yCoefficient * radius * Math.sin(value * Math.PI) + 'px, 0)';
+});
+
+var reset$7 = function reset(elem) {
+  elem.style.transform = '';
+};
+
 var Dancer = function () {
   function Dancer() {
     classCallCheck(this, Dancer);
@@ -306,6 +330,7 @@ var Dancer = function () {
     this.registerDance('vanish', vanish, reset$4);
     this.registerDance('color', color, reset$5);
     this.registerDance('radius', radius, reset$6);
+    this.registerDance('swing', swing, reset$7);
   }
 
   createClass(Dancer, [{
