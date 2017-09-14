@@ -12,7 +12,7 @@ var classCallCheck = function (instance, Constructor) {
 
 var createClass = function () {
   function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
+    for (var i = 0, len = props.length; i < len; i++) {
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
@@ -45,7 +45,7 @@ var Analyser = function Analyser() {
 
   this.analyse = function () {
     _this.analyser.getByteFrequencyData(_this.frequences);
-    for (var i = 0; i < _this.frequences.length; i++) {
+    for (var i = 0, len = _this.frequences.length; i < len; i++) {
       if (!_this.hzHistory[i]) {
         _this.hzHistory[i] = [];
       }
@@ -77,7 +77,7 @@ var Analyser = function Analyser() {
     });
     var scale = max - min;
     var actualValue = _this.frequences[index] - min;
-    var percentage = actualValue / scale;
+    var percentage = scale === 0 ? 0 : actualValue / scale;
     return _this.startingScale + _this.pulseRatio * percentage;
   };
 
