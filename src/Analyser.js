@@ -19,7 +19,7 @@ class Analyser {
 
   analyse = () => {
     this.analyser.getByteFrequencyData(this.frequences)
-    for(let i=0; i < this.frequences.length; i++){  
+    for(let i=0, len = this.frequences.length; i < len; i++){
       if(!this.hzHistory[i]){
         this.hzHistory[i] = []
       }
@@ -51,7 +51,7 @@ class Analyser {
     })
     const scale = max - min
     const actualValue = this.frequences[index] -min
-    const percentage = (actualValue/scale)
+    const percentage = scale === 0 ? 0 : (actualValue/scale);
     return this.startingScale + (this.pulseRatio * percentage)
   }
 
