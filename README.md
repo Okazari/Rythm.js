@@ -173,6 +173,10 @@ Here are the build in dances and their options
   + min : Minimum value given to `border-radius`. Default: `0`
   + max : Maximum value given to `border-radius`. Default: `25`
   + reverse : Boolean to make effect from max to min. Default: `false`
++ blur
+  + min : Minimum value given to `filter: blur()`. Default: `0`
+  + max : Maximum value given to `filter: blur()`. Default: `8`
+  + reverse : Boolean to make effect from max to min. Default: `false`
 
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/)
 
