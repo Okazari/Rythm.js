@@ -42,6 +42,8 @@ class Player {
     if(this.currentInputType !== this.inputTypeList['STREAM']){
       Analyser.analyser.connect(this.audioCtx.destination)
       this.audio.addEventListener("ended", this.stop)
+    } else {
+      Analyser.analyser.disconnect()
     }
   }
 
