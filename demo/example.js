@@ -42,9 +42,11 @@ window.onload = function(){
   rythm.addRythm('swing2', 'swing', 0, 10, { curve: 'up' })
   rythm.addRythm('swing3', 'swing', 0, 10, { direction: 'left' })
   rythm.addRythm('swing4', 'swing', 0, 10, { radius: 10 })
+  rythm.addRythm('kern', 'kern', 0, 10)
   rythm.addRythm('thanks','shake',0,10, { min: -10, max: 10 })
   rythm.addRythm('contributor-avatar', 'pulse', 0, 10, { min: 0.5, max: 1.1 })
-  rythm.addRythm('contributor-login-link','jump',0,10, { min: -15, max: 0 })
+  rythm.addRythm('contributor-login-link','jump',0, 10, { min: -15, max: 0 })
+  rythm.addRythm('contributor-login-link','kern',0, 10, { min: 0, max: 10 })
 
   var onMicClick = function(){
     if(rythm.stopped === false){
