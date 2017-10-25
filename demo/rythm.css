@@ -158,7 +158,7 @@ section:last-child {
   /*background-color: white;*/
 }
 
-.radius1, .radius2{
+.radius1, .radius2, .borderColor1, .borderColor2, .borderColor3 {
   border: 1px solid white;
   padding: 1px;
 }

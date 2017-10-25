@@ -3,6 +3,7 @@ import shake, { reset as shakeReset } from './dances/shake.js'
 import jump, { reset as jumpReset } from './dances/jump.js'
 import twist, { reset as twistReset } from './dances/twist.js'
 import vanish, { reset as vanishReset } from './dances/vanish.js'
+import borderColor, {reset as borderColorReset} from './dances/border-color.js'
 import color, { reset as colorReset } from './dances/color.js'
 import radius, { reset as radiusReset } from './dances/radius.js'
 import blur, { reset as blurReset } from './dances/blur.js'
@@ -19,6 +20,7 @@ class Dancer {
     this.registerDance('twist', twist, twistReset)
     this.registerDance('vanish', vanish, vanishReset)
     this.registerDance('color', color, colorReset)
+    this.registerDance('borderColor', borderColor, borderColorReset)
     this.registerDance('radius', radius, radiusReset)
     this.registerDance('blur', blur, blurReset)
     this.registerDance('swing', swing, swingReset)
