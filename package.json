@@ -46,7 +46,7 @@
   },
   "lint-staged": {
     "*.{js,css}": [
-      "prettier --write --config ./.prettierrc",
+      "prettier --write --config .prettierrc",
       "git add"
     ]
   }
