@@ -210,9 +210,22 @@
           Kern
         </h1>
         <div class="demo">
-          <div class="rythm kern">𐇑🕪 rythm.js</div>
+          <div class="rythm rythm-kern kern1">𐇑🕪 rythm.js</div>
           <pre class="prettyprint">
-            rythm.addRythm('kern', 'kern')
+            rythm.addRythm('kern1', 'kern', 0, 10 , {
+              min: -5,
+              max: 5
+            })
+          </pre>
+        </div>
+        <div class="demo">
+          <div class="rythm rythm-kern kern2">𐇑🕪 rythm.js</div>
+          <pre class="prettyprint">
+            rythm.addRythm('kern2', 'kern', 0, 10 , {
+              min: -5,
+              max: 5,
+              reverse: true,
+            })
           </pre>
         </div>
       </section>
