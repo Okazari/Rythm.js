@@ -166,6 +166,9 @@ Here are the build in dances and their options
   + min : Minimum value (between 0 and 1) given to `opacity`. Default: `0`
   + max : Maximum value (between 0 and 1) given to `opacity`. Default: `1`
   + reverse : Boolean to reverse the effect. Default `false` (Higher the pulse is, the more visible it will be)
++ borderColor
+  + from : Array of integer between 0 and 255 corresponding to a RGB color. Default: `[0,0,0]`
+  + to : Array of integer between 0 and 255 corresponding to a RGB color. Default: `[255,255,255]`
 + color
   + from : Array of integer between 0 and 255 corresponding to a RGB color. Default: `[0,0,0]`
   + to : Array of integer between 0 and 255 corresponding to a RGB color. Default: `[255,255,255]`
