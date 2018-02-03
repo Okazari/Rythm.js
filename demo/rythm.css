@@ -232,9 +232,17 @@ section:last-child {
 .radius2,
 .borderColor1,
 .borderColor2,
-.borderColor3 {
+.borderColor3,
+.borderWidth1,
+.borderWidth2 {
   border: 2px solid white;
   padding: 1px;
+}
+
+.borderWidth1,
+.borderWidth2 {
+  min-width: 15px;
+  min-height: 15px;
 }
 
 /* Pretty printing styles. Used with prettify.js. */

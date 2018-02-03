@@ -51,6 +51,8 @@ window.onload = function() {
     from: [255, 255, 0],
     to: [255, 0, 0],
   })
+  rythm.addRythm('borderWidth1', 'borderWidth', 0, 2)
+  rythm.addRythm('borderWidth2', 'borderWidth', 0, 2, { min: 2, max: 10 })
   rythm.addRythm('radius1', 'radius', 0, 10, { min: 0, max: 30 })
   rythm.addRythm('radius2', 'radius', 0, 10, { reverse: true, min: 0, max: 30 })
   rythm.addRythm('blur1', 'blur', 0, 10)

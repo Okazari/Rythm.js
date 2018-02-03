@@ -1,4 +1,4 @@
-<♫/> Rythm.js - v2.2.2
+<♫/> Rythm.js - v2.2.3
 ========
 
 [![Build Status](https://travis-ci.org/Okazari/Rythm.js.svg?branch=master)](https://travis-ci.org/Okazari/Rythm.js)
@@ -190,6 +190,9 @@ Here are the build in dances and their options
 + Neon
   + from : Array of integer between 0 and 255 corresponding to a RGB color. Default: `[0,0,0]`
   + to : Array of integer between 0 and 255 corresponding to a RGB color. Default: `[255,255,255]`
++ borderWidth
+  + min : Minimum value given to `border-width`. Default: `0`
+  + max : Maximum value given to `borderr-width`. Default: `5`
 
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/)
 

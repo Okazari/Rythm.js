@@ -12,6 +12,9 @@ import blur, { reset as blurReset } from './dances/blur.js'
 import swing, { reset as swingReset } from './dances/swing.js'
 import neon, { reset as neonReset } from './dances/neon.js'
 import kern, { reset as kernReset } from './dances/kern.js'
+import borderWidth, {
+  reset as borderWidthReset,
+} from './dances/border-width.js'
 
 class Dancer {
   constructor() {
@@ -30,6 +33,7 @@ class Dancer {
     this.registerDance('swing', swing, swingReset)
     this.registerDance('neon', neon, neonReset)
     this.registerDance('kern', kern, kernReset)
+    this.registerDance('borderWidth', borderWidth, borderWidthReset)
   }
 
   registerDance(type, dance, reset = () => {}) {

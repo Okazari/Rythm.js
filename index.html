@@ -9,7 +9,7 @@
     <!-- <audio id="audio" src="samples/rythmC" autoplay=""></audio> -->
     <div class="container">
       <h1 class="shake3">
-        Rythm.js - v2.2.2
+        Rythm.js - v2.2.3
       </h1>
       <h2>
         A javascript library that makes your page dance.
@@ -50,6 +50,33 @@
           <div class="rythm rythm-high">♫</div>
           <pre class="prettyprint">
             use css class 'rythm-high'
+          </pre>
+        </div>
+      </section>
+	  <h1>
+        Added in v2.2.3
+      </h1>
+	  <section>
+        <h3>
+          Border-Width
+        </h3>
+        <div class="demo">
+          <div class="rythm">
+            <div class="borderWidth1"></div>
+          </div>
+          <pre class="prettyprint">
+            rythm.addRythm('borderWidth1', 'borderWidth', 0, 2)
+          </pre>
+        </div>
+        <div class="demo">
+          <div class="rythm">
+            <div class="borderWidth2"></div>
+          </div>
+          <pre class="prettyprint">
+            rythm.addRythm('borderWidth2', 'borderWidth', 0, 2, {
+              min: 2,
+              max: 10
+            })
           </pre>
         </div>
       </section>

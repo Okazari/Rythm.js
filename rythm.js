@@ -440,6 +440,20 @@
     elem.style.letterSpacing = ''
   }
 
+  var borderWidth = function(elem, value) {
+    var options =
+      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {}
+
+    var max = !isNaN(options.max) ? options.max : 5
+    var min = !isNaN(options.min) ? options.min : 0
+    var borderWidth = (max - min) * value + min
+    elem.style.borderWidth = borderWidth + 'px'
+  }
+
+  var reset$12 = function reset(elem) {
+    elem.style.borderWidth = ''
+  }
+
   var Dancer = (function() {
     function Dancer() {
       classCallCheck(this, Dancer)
@@ -459,6 +473,7 @@
       this.registerDance('swing', swing, reset$9)
       this.registerDance('neon', neon, reset$10)
       this.registerDance('kern', kern, reset$11)
+      this.registerDance('borderWidth', borderWidth, reset$12)
     }
 
     createClass(Dancer, [
@@ -609,4 +624,3 @@
 
   return Rythm$1
 })
-//# sourceMappingURL=rythm.js.map
