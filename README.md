@@ -192,7 +192,7 @@ Here are the build in dances and their options
   + to : Array of integer between 0 and 255 corresponding to a RGB color. Default: `[255,255,255]`
 + borderWidth
   + min : Minimum value given to `border-width`. Default: `0`
-  + max : Maximum value given to `borderr-width`. Default: `5`
+  + max : Maximum value given to `border-width`. Default: `5`
 
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/)
 
