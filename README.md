@@ -193,6 +193,9 @@ Here are the build in dances and their options
 + borderWidth
   + min : Minimum value given to `border-width`. Default: `0`
   + max : Maximum value given to `borderr-width`. Default: `5`
++ fontWidth
+  + min : Minimum value given to `font-width`. Default: `0.8`
+  + max : Maximum value given to `font-width`. Default: `1.2`
 
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/)
 
