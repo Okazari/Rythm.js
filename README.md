@@ -196,6 +196,9 @@ Here are the build in dances and their options
 + fontSize
   + min : Minimum value given to `font-width`. Default: `0.8`
   + max : Maximum value given to `font-width`. Default: `1.2`
++ twirl
+  + min : Minimum value given to `transform: rotate3d()`. Default: `-90`
+  + max : Maximum value given to `transform: rotate3d()`. Default: `90`
 
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/)
 
