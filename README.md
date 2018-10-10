@@ -242,7 +242,7 @@ Features
 Contribute
 ==========
 
-Any pull request will be apreciated. You can start coding on this project following this steps :
+Any pull request will be appreciated. You can start coding on this project following this steps :
  + Fork the project
  + Clone your repository
  + run ```npm install```
