@@ -120,7 +120,7 @@ rythm.plugMicrophone().then(function(){...})
 rythm.start()
 
 /* Stop the party
- * @freeze: Set this to true if you want to prevent the element to reset to its initial position
+ * @freeze: Set this to true if you want to prevent the elements to reset to their initial position
  */
 rythm.stop(freeze)
 ```
