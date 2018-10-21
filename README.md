@@ -103,7 +103,7 @@ rythm.setGain(value)
 /* Add your own rythm-class
  * @elementClass: Class that you want to link your rythm to
  * @danceType: Use any of the build in effect or give your own function
- * @startValue: The starting of your rythm
+ * @startValue: The starting frequency of your rythm
  * @nbValue: The number of frequency of your rythm
  * 1024 Frequencies, your rythm will react to the average of your selected frequencies.
  * Examples: bass 0-10 ; medium 150-40 ; high 500-100
