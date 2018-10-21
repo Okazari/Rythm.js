@@ -111,7 +111,7 @@ rythm.setGain(value)
 rythm.addRythm(elementClass, danceType, startValue, nbValue)
 
 /* Plug your computer microphone to rythm.js.
- * This function returns a resolved promise when the microphone is up.
+ * This function returns a Promise object that is resolved when the microphone is up.
  * Require your website to be run in HTTPS
  */
 rythm.plugMicrophone().then(function(){...})
