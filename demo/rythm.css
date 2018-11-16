@@ -35,7 +35,13 @@ h1 {
   font-size: 1em; 
   min-width: 150px;
 }
-
+.rythm.fontColor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  font-size: 2em;
+}
 .fontSize__placeholder {
   height: 20px;
   width: 20px;

@@ -16,6 +16,7 @@ import fontSize, { reset as fontSizeReset } from './dances/font-size.js'
 import borderWidth, {
   reset as borderWidthReset,
 } from './dances/border-width.js'
+import fontColor, { reset as fontColorReset } from './dances/font-color.js'
 
 class Dancer {
   constructor() {

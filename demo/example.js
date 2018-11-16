@@ -78,6 +78,11 @@ window.onload = function() {
   rythm.addRythm('thanks', 'shake', 0, 10, { min: -10, max: 10 })
   rythm.addRythm('contributor-avatar', 'pulse', 0, 10, { min: 0.5, max: 1.1 })
   rythm.addRythm('contributor-login-link', 'kern', 0, 10, { min: 0, max: 5 })
+  rythm.addRythm('fontColor1', 'fontColor', 0, 10)
+  rythm.addRythm('fontColor2', 'fontColor', 0, 10, {
+    from: [0, 0, 255],
+    to: [255, 0, 255],
+    })
 
   var onMicClick = function() {
     if (rythm.stopped === false) {

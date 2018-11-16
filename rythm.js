@@ -410,6 +410,22 @@ var reset$13 = function reset(elem) {
   elem.style.borderWidth = '';
 };
 
+var fontColor = (function (elem, value) {
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+    var from = options.from || [0, 0, 0];
+    var to = options.to || [255, 255, 255];
+    var scaleR = (to[0] - from[0]) * value;
+    var scaleG = (to[1] - from[1]) * value;
+    var scaleB = (to[2] - from[2]) * value;
+    elem.style.color = 'rgb(' + Math.floor(to[0] - scaleR) + ', ' + Math.floor(to[1] - scaleG) + ', ' + Math.floor(to[2] - scaleB) + ')';
+
+});
+
+var reset$14 = function reset(elem) {
+  elem.style.color = '';
+};
+
 var Dancer = function () {
   function Dancer() {
     classCallCheck(this, Dancer);
@@ -431,6 +447,7 @@ var Dancer = function () {
     this.registerDance('kern', kern, reset$11);
     this.registerDance('borderWidth', borderWidth, reset$13);
     this.registerDance('fontSize', fontSize, reset$12);
+    this.registerDance('fontColor', fontColor, reset$14);
   }
 
   createClass(Dancer, [{
