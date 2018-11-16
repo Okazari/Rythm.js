@@ -16,6 +16,7 @@ import fontSize, { reset as fontSizeReset } from './dances/font-size.js'
 import borderWidth, {
   reset as borderWidthReset,
 } from './dances/border-width.js'
+import tap, { reset as tapReset } from './dances/tap.js'
 
 class Dancer {
   constructor() {
@@ -36,6 +37,7 @@ class Dancer {
     this.registerDance('kern', kern, kernReset)
     this.registerDance('borderWidth', borderWidth, borderWidthReset)
     this.registerDance('fontSize', fontSize, fontSizeReset)
+    this.registerDance('tap', tap, tapReset)
   }
 
   registerDance(type, dance, reset = () => {}) {
@@ -69,5 +71,4 @@ class Dancer {
     Array.from(elements).forEach(elem => reset(elem))
   }
 }
-
 export default new Dancer()

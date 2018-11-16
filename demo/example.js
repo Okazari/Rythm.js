@@ -54,7 +54,7 @@ window.onload = function() {
   rythm.addRythm('borderWidth1', 'borderWidth', 0, 2)
   rythm.addRythm('borderWidth2', 'borderWidth', 0, 2, { min: 2, max: 9 })
   rythm.addRythm('fontSize1', 'fontSize', 0, 2)
-  rythm.addRythm('fontSize2', 'fontSize', 0, 2, { min: .9, max: 1.1 })
+  rythm.addRythm('fontSize2', 'fontSize', 0, 2, { min: 0.9, max: 1.1 })
   rythm.addRythm('radius1', 'radius', 0, 10, { min: 0, max: 30 })
   rythm.addRythm('radius2', 'radius', 0, 10, { reverse: true, min: 0, max: 30 })
   rythm.addRythm('blur1', 'blur', 0, 10)
@@ -64,6 +64,8 @@ window.onload = function() {
   rythm.addRythm('swing2', 'swing', 0, 10, { curve: 'up' })
   rythm.addRythm('swing3', 'swing', 0, 10, { direction: 'left' })
   rythm.addRythm('swing4', 'swing', 0, 10, { radius: 10 })
+  rythm.addRythm('tap1', 'tap', 0, 10)
+  rythm.addRythm('tap2', 'tap', 0, 10, { reverse: true })
   rythm.addRythm('neon1', 'neon', 0, 10)
   rythm.addRythm('neon2', 'neon', 0, 10, {
     from: [0, 0, 255],
