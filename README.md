@@ -200,7 +200,9 @@ Here are the build in dances and their options:
 + fontSize
   + min: Minimum value given to `font-width`. Default: `0.8`
   + max: Maximum value given to `font-width`. Default: `1.2`
-
++ tap
+  + min: Minimum value given to 'matrix(1, x , 0, 1, 0, 0)'. Default: `20`
+  + max: Maximum value given to 'matrix(1, x , 0, 1, 0, 0)'. Default: `25`
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/).
 
 Custom dance type
