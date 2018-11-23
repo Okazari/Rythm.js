@@ -200,7 +200,10 @@ Here are the build in dances and their options:
 + fontSize
   + min: Minimum value given to `font-width`. Default: `0.8`
   + max: Maximum value given to `font-width`. Default: `1.2`
-
++ tilt
+  + min: Minimum value given to `tilt`. Default: `20`
+  + max: Maximum value given to `tilt`. Default: `25`
+  + reverse: Boolean to make effect from max to min. Default: `false`
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/).
 
 Custom dance type
