@@ -36,14 +36,6 @@ h1 {
   min-width: 150px;
 }
 
-.rythm.fontColor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 200px;
-  font-size: 2em;
-}
-
 #quote {
   flex-direction: column;
   margin: 20px;
