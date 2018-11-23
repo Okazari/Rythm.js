@@ -78,6 +78,8 @@ window.onload = function() {
   rythm.addRythm('thanks', 'shake', 0, 10, { min: -10, max: 10 })
   rythm.addRythm('contributor-avatar', 'pulse', 0, 10, { min: 0.5, max: 1.1 })
   rythm.addRythm('contributor-login-link', 'kern', 0, 10, { min: 0, max: 5 })
+  rythm.addRythm('tilt1', 'tilt', 0, 10)
+  rythm.addRythm('tilt2', 'tilt', 0, 10, { reverse: true })
 
   var onMicClick = function() {
     if (rythm.stopped === false) {

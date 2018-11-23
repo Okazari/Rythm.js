@@ -16,7 +16,7 @@ import fontSize, { reset as fontSizeReset } from './dances/font-size.js'
 import borderWidth, {
   reset as borderWidthReset,
 } from './dances/border-width.js'
-
+import tilt, { reset as tiltReset } from './dances/tilt.js'
 class Dancer {
   constructor() {
     this.resets = {}
@@ -36,6 +36,7 @@ class Dancer {
     this.registerDance('kern', kern, kernReset)
     this.registerDance('borderWidth', borderWidth, borderWidthReset)
     this.registerDance('fontSize', fontSize, fontSizeReset)
+    this.registerDance('tilt', tilt, tiltReset)
   }
 
   registerDance(type, dance, reset = () => {}) {

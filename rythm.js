@@ -410,6 +410,22 @@ var reset$13 = function reset(elem) {
   elem.style.borderWidth = '';
 };
 
+var tilt = function(elem, value) {
+    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {}
+
+    var max = !isNaN(options.max) ? options.max : 25
+    var min = !isNaN(options.min) ? options.min : 20
+    var rotate3d = (max - min) * value
+    if (options.reverse) {
+      rotate3d = max - rotate3d
+    }
+    elem.style.transform = 'matrix(1, ' + Math.sin(rotate3d) + ', 0, 1 , 0 ,0)'
+  }
+
+  var reset$14 = function reset(elem) {
+    elem.style.transform = '';
+  }
+
 var Dancer = function () {
   function Dancer() {
     classCallCheck(this, Dancer);
@@ -431,6 +447,7 @@ var Dancer = function () {
     this.registerDance('kern', kern, reset$11);
     this.registerDance('borderWidth', borderWidth, reset$13);
     this.registerDance('fontSize', fontSize, reset$12);
+    this.registerDance('tilt', tilt, reset$14);
   }
 
   createClass(Dancer, [{
