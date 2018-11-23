@@ -250,15 +250,25 @@ var vanish = (function (elem, value) {
   var max = !isNaN(options.max) ? options.max : 1;
   var min = !isNaN(options.max) ? options.max : 0;
   var vanish = (max - min) * value;
+  let styleValue =''
   if (options.reverse) {
-    elem.style.opacity = max - vanish;
+    styleValue = max - vanish
   } else {
-    elem.style.opacity = min + vanish;
+    styleValue = min + vanish
+  }
+  if (elem.nodeName.toLowerCase() === 'svg') {
+    elem.style['fill-opacity'] = styleValue;
+  } else {
+    elem.style.opacity = styleValue;
   }
 });
 
 var reset$4 = function reset(elem) {
-  elem.style.opacity = '';
+    if (elem.nodeName.toLowerCase() === 'svg') {
+    elem.style['fill-opacity'] = ''
+  } else {
+    elem.style.opacity = ''
+  }
 };
 
 var borderColor = (function (elem, value) {
@@ -279,16 +289,31 @@ var reset$5 = function reset(elem) {
 var color = (function (elem, value) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
-  var from = options.from || [0, 0, 0];
-  var to = options.to || [255, 255, 255];
-  var scaleR = (to[0] - from[0]) * value;
-  var scaleG = (to[1] - from[1]) * value;
-  var scaleB = (to[2] - from[2]) * value;
-  elem.style.backgroundColor = 'rgb(' + Math.floor(to[0] - scaleR) + ', ' + Math.floor(to[1] - scaleG) + ', ' + Math.floor(to[2] - scaleB) + ')';
-});
+  const from = options.from || [0, 0, 0]
+  const to = options.to || [255, 255, 255]
+  const scaleR = (to[0] - from[0]) * value
+  const scaleG = (to[1] - from[1]) * value
+  const scaleB = (to[2] - from[2]) * value
+  const styleValue =
+    'rgb(' +
+    Math.floor(to[0] - scaleR) +
+    ', ' +
+    Math.floor(to[1] - scaleG) +
+    ', ' +
+    Math.floor(to[2] - scaleB) +
+    ')'
+  if (elem.nodeName.toLowerCase() === 'svg') {
+    elem.style.fill = styleValue
+  } else {
+    elem.style.backgroundColor = styleValue
+  }
 
 var reset$6 = function reset(elem) {
-  elem.style.backgroundColor = '';
+   if (elem.nodeName.toLowerCase() === 'svg') {
+    elem.style.fill = ''
+  } else {
+    elem.style.backgroundColor = ''
+  }
 };
 
 var radius = (function (elem, value) {
