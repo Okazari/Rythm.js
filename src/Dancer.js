@@ -37,6 +37,7 @@ class Dancer {
     this.registerDance('kern', kern, kernReset)
     this.registerDance('borderWidth', borderWidth, borderWidthReset)
     this.registerDance('fontSize', fontSize, fontSizeReset)
+    this.registerDance('fontColor', fontColor, fontSizeReset)
   }
 
   registerDance(type, dance, reset = () => {}) {
