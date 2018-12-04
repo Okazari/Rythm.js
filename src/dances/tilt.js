@@ -1,5 +1,6 @@
-  let max = !isNaN(options.max) ? options.max : 25
-  let min = !isNaN(options.min) ? options.min : 20
+export default (elem, value, options = {}) => {
+  const max = !isNaN(options.max) ? options.max : 25
+  const min = !isNaN(options.min) ? options.min : 20
   let rotate3d = (max - min) * value
   if (options.reverse) {
     rotate3d = max - rotate3d
