@@ -46,7 +46,7 @@ rythm.setMusic('path/to/sample.mp3')
 rythm.start()
 ```
 
-ES6 module
+ES6 모듈
 ----------
 
 ```js
@@ -57,7 +57,7 @@ rythm.start()
 ```
 
 
-API documentation
+API 문서
 =================
 
 Rythm object
