@@ -301,4 +301,5 @@ class Dancer {
 
 License: GNU GPL
 
+
 Author: [@OkazariBzh](https://twitter.com/OkazariBzh)
