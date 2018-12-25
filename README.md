@@ -198,8 +198,8 @@ Here are the build in dances and their options:
   + min: Minimum value given to `border-width`. Default: `0`
   + max: Maximum value given to `border-width`. Default: `5`
 + fontSize
-  + min: Minimum value given to `font-width`. Default: `0.8`
-  + max: Maximum value given to `font-width`. Default: `1.2`
+  + min: Minimum value given to `font-size`. Default: `0.8`
+  + max: Maximum value given to `font-size`. Default: `1.2`
 + tilt
   + min: Minimum value given to `tilt`. Default: `20`
   + max: Maximum value given to `tilt`. Default: `25`
