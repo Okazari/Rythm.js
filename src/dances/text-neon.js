@@ -4,8 +4,8 @@ const generateTextShadow = (value, min, max, neons) => neons.reduce((textShadow,
 }, null)
 
 export default (elem, value, options = {}) => {
-    const max = !isNaN(options.max) ? options.max : 0
-    const min = !isNaN(options.min) ? options.min : 10
+    const max = !isNaN(options.max) ? options.max : 10
+    const min = !isNaN(options.min) ? options.min : 0
     elem.style.textShadow = generateTextShadow(value, min, max, options.neons)
 }
   
