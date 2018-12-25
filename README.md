@@ -204,6 +204,12 @@ Here are the build in dances and their options:
   + min: Minimum value given to `tilt`. Default: `20`
   + max: Maximum value given to `tilt`. Default: `25`
   + reverse: Boolean to make effect from max to min. Default: `false`
++ [variableFont](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings)
+  + variables: variables given to `font-variable-settings` with min and max value range. Default: `{}`
+  ```javacript
+  rythm.addRythm('myClass', 'variableFont', 0, 10, { wght: { min: 100, max: 600 }, ital: { min: 100, max: 200 } })
+  ```
+
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/).
 
 Custom dance type
