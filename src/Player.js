@@ -84,7 +84,12 @@ class Player {
 
   start = () => {
     if (this.currentInputType === this.inputTypeList['TRACK']) {
-      this.audio.play()
+      if (this.audioCtx.state === 'suspended') {
+        this.audioCtx.resume()
+          .then(() => this.audio.play())
+      } else {
+        this.audio.play()
+      }
     }
   }
 
