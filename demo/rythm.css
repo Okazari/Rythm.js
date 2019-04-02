@@ -32,14 +32,20 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1em; 
+  font-size: 1em;
   min-width: 150px;
 }
-
+.rythm.fontColor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  font-size: 2em;
+}
 .fontSize__placeholder {
   height: 20px;
   width: 20px;
-  margin-right: 10px; 
+  margin-right: 10px;
   background-color: white;
   display: inline-block;
 }
@@ -215,8 +221,7 @@ a:hover {
   margin: 5px 10px;
 }
 
-
-.rythm-kern {
+.font-dance {
   font-size: 2em;
   width: 40px;
   text-align: center;
