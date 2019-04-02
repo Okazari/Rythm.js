@@ -204,6 +204,23 @@ Here are the build in dances and their options:
   + min: Minimum value given to `tilt`. Default: `20`
   + max: Maximum value given to `tilt`. Default: `25`
   + reverse: Boolean to make effect from max to min. Default: `false`
++ textNeon
+  + min: Minimum value given to `text-shadow`. Default: `0`
+  + min: Maximum value given to `text-shadow`. Default: `10`
+  + neons: Array of objects corresponding to each neon glowing layer `{strength: 10, color: red}`. Default: `[]`
+  ```javascript
+  rythm.addRythm('myClass','textNeon', 0, 50, {
+        min: 0,
+        max: 30,
+        neons: [
+            {strength: 10, color: 'white'},
+            {strength: 20, color: 'white'},
+            {strength: 30, color: 'red'},
+            {strength: 40, color: 'crimson'},
+            {strength: 60, color: 'firebrick'},
+    ]})
+    ```
+  
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/).
 
 Custom dance type
