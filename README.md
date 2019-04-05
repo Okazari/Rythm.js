@@ -102,7 +102,7 @@ rythm.setGain(value)
 
 /* Add your own rythm-class
  * @elementClass: Class that you want to link your rythm to
- * @danceType: Use any of the build in effect or give your own function
+ * @danceType: Use any of the built-in effect or give your own function
  * @startValue: The starting frequency of your rythm
  * @nbValue: The number of frequency of your rythm
  * 1024 Frequencies, your rythm will react to the average of your selected frequencies.
@@ -125,7 +125,7 @@ rythm.start()
 rythm.stop(freeze)
 ```
 
-Build in classes with "pulse" effect
+Built-in classes with "pulse" effect
 ------------------------------------
 
 + rythm-bass
@@ -150,7 +150,7 @@ For more control of theses dance types, you can give a configuration object as l
 addRythm('rythm-high', 'shake', 500, 100, { direction:'left', min: 20, max: 300 })
 ```
 
-Here are the build in dances and their options:
+Here are the built-in dances and their options:
 + pulse
   + min: Minimum value given to `transform: scale()`. Default: `0.75`
   + max: Maximum value given to `transform: scale()`. Default: `1.25`
