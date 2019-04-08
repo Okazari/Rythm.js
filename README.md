@@ -1,3 +1,6 @@
+# Contribute
+
+
 <♫/> Rythm.js - v2.2.4
 ======================
 
@@ -204,6 +207,9 @@ Here are the build in dances and their options:
   + min: Minimum value given to `tilt`. Default: `20`
   + max: Maximum value given to `tilt`. Default: `25`
   + reverse: Boolean to make effect from max to min. Default: `false`
++ fontColor
+  + from: Array of integer between 0 and 255 corresponding to a RGB color. Default: `[0,0,0]`
+  + to: Array of integer between 0 and 255 corresponding to a RGB color. Default: `[255,255,255]`
 
 To see each visual effect, you can go to the [Demo](https://okazari.github.io/Rythm.js/).
 

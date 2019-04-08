@@ -54,7 +54,7 @@ window.onload = function() {
   rythm.addRythm('borderWidth1', 'borderWidth', 0, 2)
   rythm.addRythm('borderWidth2', 'borderWidth', 0, 2, { min: 2, max: 9 })
   rythm.addRythm('fontSize1', 'fontSize', 0, 2)
-  rythm.addRythm('fontSize2', 'fontSize', 0, 2, { min: .9, max: 1.1 })
+  rythm.addRythm('fontSize2', 'fontSize', 0, 2, { min: 0.9, max: 1.1 })
   rythm.addRythm('radius1', 'radius', 0, 10, { min: 0, max: 30 })
   rythm.addRythm('radius2', 'radius', 0, 10, { reverse: true, min: 0, max: 30 })
   rythm.addRythm('blur1', 'blur', 0, 10)
@@ -80,6 +80,11 @@ window.onload = function() {
   rythm.addRythm('contributor-login-link', 'kern', 0, 10, { min: 0, max: 5 })
   rythm.addRythm('tilt1', 'tilt', 0, 10)
   rythm.addRythm('tilt2', 'tilt', 0, 10, { reverse: true })
+  rythm.addRythm('fontColor1', 'fontColor', 0, 10)
+  rythm.addRythm('fontColor2', 'fontColor', 0, 10, {
+    from: [0, 0, 255],
+    to: [255, 0, 255],
+  })
 
   var onMicClick = function() {
     if (rythm.stopped === false) {

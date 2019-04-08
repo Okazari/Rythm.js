@@ -64,15 +64,39 @@
           <div class="rythm tilt1">♫</div>
           <pre class="prettyprint">
                     rythm.addRythm('tilt1', 'tilt', 0, 10)
-                  </pre>
+          </pre>
         </div>
         <div class="demo">
           <div class="rythm tilt2">♫</div>
           <pre class="prettyprint">
-                    rythm.addRythm('tilt2', 'tilt', 0, 10, {
-                      reverse : true
-                    })
-                  </pre>
+                  rythm.addRythm('tilt2', 'tilt', 0, 10, {
+                    reverse : true
+                  })
+          </pre>
+        </div>
+      </section>
+      <section>
+        <h3>
+          Font-color
+        </h3>
+        <div class="demo">
+          <div class="rythm font fontColor1">
+            <div class="font__placeholder"></div>Font-color !
+          </div>
+          <pre class="prettyprint">
+                rythm.addRythm('fontColor1', 'color', 0, 10)
+              </pre>
+        </div>
+        <div class="demo">
+          <div class="rythm font fontColor2">
+            <div class="font__placeholder"></div>Font-color !
+          </div>
+          <pre class="prettyprint">
+                rythm.addRythm('fontColor2', 'color', 0, 10 {
+                  from: [0,0,255],
+                  to:[255,0,255]
+                })
+          </pre>
         </div>
       </section>
       <h1>
@@ -84,7 +108,7 @@
         </h3>
         <div class="demo">
           <div class="rythm font fontSize1">
-            <div class="fontSize__placeholder"></div>Font-dance !
+            <div class="font__placeholder"></div>Font-dance !
           </div>
           <pre class="prettyprint">
                   rythm.addRythm('fontSize1', 'fontSize', 0, 2)
@@ -92,7 +116,7 @@
         </div>
         <div class="demo">
           <div class="rythm font fontSize2">
-            <div class="fontSize__placeholder"></div>Font-dance !
+	          <div class="font__placeholder"></div>Font-dance !
           </div>
           <pre class="prettyprint">
                   rythm.addRythm('fontSize', 'fontSize', 0, 2, {
@@ -100,23 +124,6 @@
                     max: 2
                   })
                 </pre>
-        </div>
-        <h3>
-          Tilt
-        </h3>
-        <div class="demo">
-          <div class="rythm tilt1">♫</div>
-          <pre class="prettyprint">
-            rythm.addRythm('tilt1', 'tilt', 0, 10)
-          </pre>
-        </div>
-        <div class="demo">
-          <div class="rythm tilt2">♫</div>
-          <pre class="prettyprint">
-            rythm.addRythm('tilt2', 'tilt', 0, 10, {
-              reverse : true
-            })
-          </pre>
         </div>
       </section>
       <h1>
@@ -211,7 +218,7 @@
           Kern
         </h3>
         <div class="demo">
-          <div class="rythm rythm-kern kern1">𐇑🕪 rythm.js</div>
+          <div class="rythm font kern1">𐇑🕪 rythm.js</div>
           <pre class="prettyprint">
             rythm.addRythm('kern1', 'kern', 0, 10 , {
               min: -5,
@@ -220,7 +227,7 @@
           </pre>
         </div>
         <div class="demo">
-          <div class="rythm rythm-kern kern2">𐇑🕪 rythm.js</div>
+          <div class="rythm font kern2">𐇑🕪 rythm.js</div>
           <pre class="prettyprint">
             rythm.addRythm('kern2', 'kern', 0, 10 , {
               min: -5,
