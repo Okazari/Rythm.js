@@ -1726,7 +1726,7 @@ gulp-util@^3.0.0:
 gulp-webserver@^0.9.1:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/gulp-webserver/-/gulp-webserver-0.9.1.tgz#e09992165d97c5865616d642a1601529b0367064"
-  integrity sha1-4JmSFl2XxYZWFtZCoWAVKbA2cGQ=
+  integrity sha512-Z9UVbOglUaLy4xsUN+3TvVZ3a1O/8r9xd7F552Zx2ARieR+Ko41jbOJjEmdOj1KteCuuPs0jRHlNvZgA+yW1zw==
   dependencies:
     connect "^3.0.1"
     connect-livereload "^0.4.0"
