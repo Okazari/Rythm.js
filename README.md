@@ -1,7 +1,7 @@
 # Contribute
 
 
-<♫/> Rythm.js - v2.2.5
+<♫/> Rythm.js - v2.2.6
 ======================
 
 [![Build Status](https://travis-ci.org/Okazari/Rythm.js.svg?branch=master)](https://travis-ci.org/Okazari/Rythm.js)
@@ -24,7 +24,7 @@ Or get from a CDN:
 
 ```
 https://unpkg.com/rythm.js/
-https://cdnjs.cloudflare.com/ajax/libs/rythm.js/2.2.5/rythm.min.js
+https://cdnjs.cloudflare.com/ajax/libs/rythm.js/2.2.6/rythm.min.js
 ```
 
 Good old way

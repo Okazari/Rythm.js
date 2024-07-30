@@ -2,8 +2,8 @@
   typeof exports === 'object' && typeof module !== 'undefined'
     ? (module.exports = factory())
     : typeof define === 'function' && define.amd
-    ? define(factory)
-    : (global.Rythm = factory())
+      ? define(factory)
+      : (global.Rythm = factory())
 })(this, function() {
   'use strict'
 
@@ -273,7 +273,7 @@
       arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {}
 
     var max = !isNaN(options.max) ? options.max : 1
-    var min = !isNaN(options.max) ? options.max : 0
+    var min = !isNaN(options.min) ? options.min : 0
     var vanish = (max - min) * value
     if (options.reverse) {
       elem.style.opacity = max - vanish
